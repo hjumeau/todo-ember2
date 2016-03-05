@@ -10,6 +10,9 @@ export default Ember.Component.extend({
         },
         toggleTodo(todoItem){
             this.get('todoService').toggleStatus(todoItem);
+        },
+        removeTodo(todoItem){
+            this.get('todoService').remove(todoItem);
         }
     }
 });
