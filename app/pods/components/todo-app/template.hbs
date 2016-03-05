@@ -1,7 +1,11 @@
 {{todo-header}}
 <section class="main">
     <ul class="todo-list">
-        {{todo-item}}
+        {{#each todos as |todo|}}
+            {{todo-item todo=todo}}
+        {{/each}}
     </ul>
 </section>
-{{todo-footer}}
+{{#if todos}}
+    {{todo-footer}}
+{{/if}}
