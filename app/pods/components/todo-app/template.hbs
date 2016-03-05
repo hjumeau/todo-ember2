@@ -7,5 +7,5 @@
     </ul>
 </section>
 {{#if todos}}
-    {{todo-footer}}
+    {{todo-footer clearCompleted=(action 'clearCompleted')}}
 {{/if}}

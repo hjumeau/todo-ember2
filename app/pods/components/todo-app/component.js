@@ -13,6 +13,9 @@ export default Ember.Component.extend({
         },
         removeTodo(todoItem){
             this.get('todoService').remove(todoItem);
+        },
+        clearCompleted(){
+            this.get('todoService').clearCompleted();
         }
     }
 });
