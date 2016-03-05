@@ -7,6 +7,9 @@ export default Ember.Component.extend({
     actions: {
         createTodo(title){
             this.get('todoService').create(title);
+        },
+        toggleTodo(todoItem){
+            this.get('todoService').toggleStatus(todoItem);
         }
     }
 });
