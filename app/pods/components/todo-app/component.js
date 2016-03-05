@@ -4,6 +4,10 @@ export default Ember.Component.extend({
     tagName:'section',
     classNames:['todoapp'],
     todoService: Ember.inject.service('todo'),
+
+    remainingTodos: Ember.computed.filterBy('todos', 'isCompleted', false),
+    remainingTodosCount: Ember.computed.readOnly('remainingTodos.length'),
+
     actions: {
         createTodo(title){
             this.get('todoService').create(title);
