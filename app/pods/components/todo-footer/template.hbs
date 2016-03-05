@@ -1,13 +1,13 @@
 <span class="todo-count"><strong>{{pluralize todoCount 'item'}}</strong> left</span>
 <ul class="filters">
     <li>
-        All
+        {{#link-to 'todos.index' activeClass='selected'}}All{{/link-to}}
     </li>
     <li>
-        Active
+        {{#link-to 'todos.active' activeClass='selected'}}Active{{/link-to}}
     </li>
     <li>
-        Completed
+        {{#link-to 'todos.completed' activeClass='selected'}}Completed{{/link-to}}
     </li>
 </ul>
 <button class="clear-completed" {{action clearCompleted}}>Clear completed</button>

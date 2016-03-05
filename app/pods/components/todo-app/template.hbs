@@ -1,7 +1,7 @@
 {{todo-header createTodo=(action 'createTodo')}}
 <section class="main">
     <ul class="todo-list">
-        {{#each todos as |todo|}}
+        {{#each filteredTodos as |todo|}}
             {{todo-item todo=todo toggleTodo=(action 'toggleTodo') removeTodo=(action 'removeTodo')}}
         {{/each}}
     </ul>

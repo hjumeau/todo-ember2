@@ -8,6 +8,11 @@ export default Ember.Component.extend({
     remainingTodos: Ember.computed.filterBy('todos', 'isCompleted', false),
     remainingTodosCount: Ember.computed.readOnly('remainingTodos.length'),
 
+    willRender(){
+        var filteredTodos = this.get('filter') ? this.get('todos').filter(this.get('filter')) : this.get('todos');
+        this.set('filteredTodos', filteredTodos);
+    },
+
     actions: {
         createTodo(title){
             this.get('todoService').create(title);
